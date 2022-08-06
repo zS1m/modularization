@@ -1,7 +1,7 @@
 <template>
   <div class="module-preview">
     <div class="chart-block">
-      <chart-line label="连接时延(ms)" :data="testData" :threshold="30"></chart-line>
+      <chart-line label="连接时延(ms)" :options="customOptions" :data="testData" :threshold="30"></chart-line>
     </div>
   </div>
 </template>
@@ -37,7 +37,20 @@ export default {
             ['2022-08-06 18:10:20', 35],
           ]
         }
-      ]
+      ],
+      customOptions: {
+        legend: {
+          icon: 'circle'
+        },
+        tooltip: {
+          valueFormatter: (value) => value + ' 毫秒'
+        },
+        xAxis: {
+          axisTick: {
+            show: true
+          }
+        },
+      }
     }
   }
 };

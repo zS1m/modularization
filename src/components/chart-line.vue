@@ -148,8 +148,8 @@ export default {
             this.isPlainObject(base[key]) && this.isPlainObject(extend[key])
                 ? this.recursiveMerge(base[key], extend[key])
                 : extend[key];
-        return base;
       }
+      return base;
     },
     // 判断输入是否为对象
     isPlainObject(input) {
