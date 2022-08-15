@@ -73,15 +73,7 @@ export default {
           trigger: 'axis',
           //  tooltip 框限制在图表的区域内
           confine: true
-        },
-        series: this.data.map((row) => {
-          return {
-            name: row.name,
-            data: row.data,
-            type: 'line',
-            showSymbol: false
-          };
-        })
+        }
       },
       // 内置一条markLine
       defaultMarkLine: {
@@ -126,6 +118,15 @@ export default {
         ) {
           this.defaultOptions.series[0]['markLine'] = this.defaultMarkLine;
         }
+        // 更新series数据
+        this.defaultOptions['series'] = this.data.map((row) => {
+          return {
+            name: row.name,
+            data: row.data,
+            type: 'line',
+            showSymbol: false
+          };
+        })
         // 合并自定义options
         this.options && this.recursiveMerge(this.defaultOptions, this.options);
         console.log('options', this.defaultOptions);
