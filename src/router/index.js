@@ -8,6 +8,11 @@ const routes = [
     path: '/',
     name: 'module-preview',
     component: () => import('@/views/module-preview')
+  },
+  {
+    path: '/play',
+    name: 'test-play',
+    component: () => import('@/views/test-play')
   }
 ];
 

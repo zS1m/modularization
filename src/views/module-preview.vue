@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import ChartLine from "@/components/chart-line";
+import ChartLine from "@/components/charts/chart-line";
 
 export default {
   name: 'module-preview',
